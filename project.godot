@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Interactable",
+"language": "GDScript",
+"path": "res://scenes/objects/mobileCart.gd"
+} ]
+_global_script_class_icons={
+"Interactable": ""
+}
+
 [application]
 
 config/name="amazon_prototype"

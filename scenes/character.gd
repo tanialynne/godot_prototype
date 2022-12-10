@@ -2,6 +2,7 @@ extends Area2D
 
 onready var tileMap = get_parent().get_node("tileMap_terrain")
 var path : Array
+var goal : Area2D
 var character : String = Game.stringholder_characterName
 var speed : int = 150
 var adaptability_maximum : int = 100
@@ -15,6 +16,9 @@ var feedback_current : int = 100
 var dir : String = "southwest"
 
 func _ready():
+	var selfCell = tileMap.world_to_map(position)
+	position = tileMap.map_to_world(selfCell)
+	position.y += tileMap.cell_size.y / 2
 	set_process(false)
 	set_process_unhandled_input(false)
 	Game.character = self
@@ -23,7 +27,7 @@ func _ready():
 func _process(delta):
 	if path.size() > 0:
 		var target_position = tileMap.map_to_world(path[0])
-		target_position.y += 50
+		target_position.y += tileMap.cell_size.y / 2
 		
 		var direction = (target_position - global_position).normalized()
 		position += direction * speed * delta
@@ -46,6 +50,10 @@ func _process(delta):
 		
 	else:
 		$AnimatedSprite.play("idle_" + dir)
+		
+		if goal:
+			goal = null
+			Game.ui.call_deferred("add_child", load("res://computerScreen.tscn").instance())
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed():

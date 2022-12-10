@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://textures/testTile.png" type="Texture" id=1]
 [ext_resource path="res://scenes/tileMap_terrain.gd" type="Script" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://textures/Walls/Wall_Inside_Pipe_SW.png" type="Texture" id=24]
 [ext_resource path="res://textures/Walls/Wall_Outside_SW.png" type="Texture" id=25]
 [ext_resource path="res://textures/Walls/Wall_Inside_SW.png" type="Texture" id=26]
+[ext_resource path="res://scenes/objects/mobileCart.tscn" type="PackedScene" id=27]
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 174, 105, 0.046936, 105, 0.046936, 0, 174, 0 )
@@ -391,4 +392,7 @@ format = 1
 tile_data = PoolIntArray( -5, 0, 0, -4, 14, 0, -3, 14, 0, -2, 14, 0, -1, 14, 0, -65536, 14, 0, -65535, 4, 0, -65534, 6, 0, -65533, 8, 0, -65532, 14, 0, -65531, 11, 0, -65530, 14, 0, -65529, 14, 0, -65528, 11, 0, -65527, 14, 0, -65526, 14, 0, -65525, 11, 0, -65524, 14, 0, -65523, 14, 0, -65522, 4, 0, -65521, 14, 0, 65531, 2, 0, 65535, 9, 0, 131067, 9, 0, 131071, 9, 0, 196603, 9, 0, 196607, 9, 0, 262139, 9, 0, 262143, 2, 0, 327675, 9, 0, 327679, 9, 0, 393215, 2, 0, 458751, 10, 0, 524287, 9, 0, 589823, 10, 0, 655359, 9, 0, 720895, 10, 0, 786431, 9, 0, 851967, 3, 0, 917503, 7, 0, 983039, 5, 0, 1048575, 9, 0 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, 656 )
+position = Vector2( 0, 150 )
+
+[node name="mobileCart" parent="." instance=ExtResource( 27 )]
+position = Vector2( 168, 248 )

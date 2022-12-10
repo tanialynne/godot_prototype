@@ -5,6 +5,7 @@ var walkable_cells : Array
 onready var walkable_cells_ID : Array = [0, 1, 2, 3, 4, 5, 6, 7]
 
 func _ready():
+	Game.tileMap = self
 	add_points()
 	connect_points()
 	

@@ -2,18 +2,13 @@ extends Control
 
 var loader
 var nodePath : NodePath
-var timer = Timer.new()
 
 func _ready():
 	nodePath = "res://scenes/world.tscn"
 	loader = ResourceLoader.load_interactive(nodePath)
 	$TextureProgress.max_value = loader.get_stage_count()
-	call_deferred("add_child", timer)
-	timer.wait_time = 0.1
-	timer.autostart = true
-	timer.connect("timeout", self, "on_timer_timeout")
 
-func on_timer_timeout():
+func _process(delta):
 	$TextureProgress.value = loader.get_stage()
 	var err = loader.poll()
 
