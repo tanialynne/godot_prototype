@@ -22,7 +22,7 @@ func event_2():
 	Game.ui.get_node("arrow").call_deferred("free")
 	var infoIcon = load("res://scenes/infoIcon.tscn").instance()
 	Game.mobileChart.call_deferred("add_child", infoIcon)
-	infoIcon.position.y -= 192
+	infoIcon.position.y -= 128.0
 	infoIcon.name = "infoIcon"
 	Game.ui.instance_popup(2)
 
