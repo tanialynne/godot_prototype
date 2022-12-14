@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://textures/testTile.png" type="Texture" id=1]
 [ext_resource path="res://scenes/tileMap_terrain.gd" type="Script" id=2]
@@ -27,6 +27,8 @@
 [ext_resource path="res://textures/Walls/Wall_Outside_SW.png" type="Texture" id=25]
 [ext_resource path="res://textures/Walls/Wall_Inside_SW.png" type="Texture" id=26]
 [ext_resource path="res://scenes/objects/mobileCart.tscn" type="PackedScene" id=27]
+[ext_resource path="res://shaders/outline.shader" type="Shader" id=28]
+[ext_resource path="res://textures/placeholder.png" type="Texture" id=29]
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 174, 105, 0.046936, 105, 0.046936, 0, 174, 0 )
@@ -360,6 +362,14 @@ outlines = [ PoolVector2Array( 174, 105, 0.046936, 105, 0.046936, 0, 174, 0 ) ]
 14/shapes = [  ]
 14/z_index = 0
 
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 28 )
+shader_param/Smooth = true
+shader_param/width = 3.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/pixel_size = 4
+shader_param/width_speed = 0.0
+
 [node name="ySort_wold" type="YSort"]
 script = ExtResource( 5 )
 
@@ -396,3 +406,24 @@ position = Vector2( 0, 150 )
 
 [node name="mobileCart" parent="." instance=ExtResource( 27 )]
 position = Vector2( 264, 200 )
+
+[node name="placeholder_0" type="Sprite" parent="."]
+material = SubResource( 4 )
+position = Vector2( 32, 448 )
+texture = ExtResource( 29 )
+offset = Vector2( 0, -32 )
+
+[node name="placeholder_1" type="Sprite" parent="."]
+position = Vector2( -80, 504 )
+texture = ExtResource( 29 )
+offset = Vector2( 0, -32 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="ParallaxBackground"]
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.101961, 0.286275, 0.411765, 1 )

@@ -30,4 +30,13 @@ func event_3():
 	Game.character.set_process(true)
 	Game.character.set_process_unhandled_input(true)
 	Game.ui.instance_popup(3)
-	print("Hightlight interactable items...")
+	
+	#Development...
+	var shaderMaterial = ShaderMaterial.new()
+	shaderMaterial.shader = load("res://shaders/outline.shader")
+	Game.station.get_node("placeholder_0").material = shaderMaterial
+	Game.station.get_node("placeholder_1").material = shaderMaterial
+
+func event_4():
+	Game.station.get_node("placeholder_0").material = null
+	Game.station.get_node("placeholder_1").material = null
