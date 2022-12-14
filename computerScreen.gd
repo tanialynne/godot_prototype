@@ -15,6 +15,7 @@ func _ready():
 	get_tree().paused = true
 	$jake.connect("gui_input", self, "on_jake_gui_input")
 	$uma.connect("gui_input", self, "on_uma_gui_input")
+	$info/buttonReturnToFloor.connect("gui_input", self, "on_buttonReturnToFloor_gui_input")
 
 func on_jake_gui_input(event):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
@@ -27,8 +28,6 @@ func on_uma_gui_input(event):
 		$info/character.texture = load("res://textures/assets_02_03/profile_uma.png")
 		$info/name.text = "Uma"
 		$info/Label.text = umaInfo
-		$info/buttonReturnToFloor.texture = load("res://textures/assets_02_03/button_active.png")
-		$info/buttonReturnToFloor.connect("gui_input", self, "on_buttonReturnToFloor_gui_input")
 
 func on_buttonReturnToFloor_gui_input(event):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:

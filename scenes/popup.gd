@@ -29,7 +29,5 @@ func on_buttonNext_gui_input(event):
 				Events.event_2()
 			2:
 				Events.event_3()
-			3:
-				Events.event_4()
 		
 		get_tree().paused = false
