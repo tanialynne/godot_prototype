@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/ui.gd" type="Script" id=1]
 [ext_resource path="res://fonts/agency-fb.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://textures/placeholder_characterPreview.png" type="Texture" id=5]
 [ext_resource path="res://scenes/card.gd" type="Script" id=6]
 [ext_resource path="res://highlight.png" type="Texture" id=7]
+[ext_resource path="res://scenes/fogOfWar.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=2]
 size = 36
@@ -22,6 +23,9 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 mouse_filter = 2
 texture = ExtResource( 7 )
+script = ExtResource( 8 )
+
+[node name="Tween" type="Tween" parent="fogOfWar"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_left = 1.0
