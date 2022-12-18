@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/response.gd" type="Script" id=1]
+[ext_resource path="res://fonts/agency-fb.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://textures/interaction/question_icon.png" type="Texture" id=3]
+[ext_resource path="res://textures/interaction/option_panel_inactive.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="Response" type="TextureRect"]
+margin_right = 907.0
+margin_bottom = 141.0
+texture = ExtResource( 4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="questionMark" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -29.5
+margin_top = -29.0
+margin_right = 29.5
+margin_bottom = 30.0
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 24.0
+margin_right = -35.0
+margin_bottom = -13.0
+custom_fonts/font = SubResource( 1 )
+text = "Text..."
+align = 1
+valign = 1
+autowrap = true
+
+[connection signal="gui_input" from="." to="." method="_on_Response_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_Response_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Response_mouse_exited"]

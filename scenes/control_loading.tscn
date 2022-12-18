@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/control_loading.gd" type="Script" id=1]
 [ext_resource path="res://textures/placeholder_bar.png" type="Texture" id=2]
 [ext_resource path="res://fonts/agency-fb-bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://videos/loading.ogv" type="VideoStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 44
@@ -35,3 +36,9 @@ custom_fonts/font = SubResource( 1 )
 text = "Loading..."
 align = 1
 valign = 1
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 4 )
+autoplay = true

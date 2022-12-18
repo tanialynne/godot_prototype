@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://textures/testTile.png" type="Texture" id=1]
 [ext_resource path="res://scenes/tileMap_terrain.gd" type="Script" id=2]
@@ -29,6 +29,9 @@
 [ext_resource path="res://scenes/objects/mobileCart.tscn" type="PackedScene" id=27]
 [ext_resource path="res://shaders/outline.shader" type="Shader" id=28]
 [ext_resource path="res://textures/placeholder.png" type="Texture" id=29]
+[ext_resource path="res://scenes/NPC.tscn" type="PackedScene" id=30]
+[ext_resource path="res://scenes/objects/mobileCart.gd" type="Script" id=31]
+[ext_resource path="res://scenes/jake.gd" type="Script" id=32]
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 174, 105, 0.046936, 105, 0.046936, 0, 174, 0 )
@@ -406,15 +409,18 @@ position = Vector2( 0, 150 )
 
 [node name="mobileCart" parent="." instance=ExtResource( 27 )]
 position = Vector2( 264, 200 )
+script = ExtResource( 31 )
 
 [node name="placeholder_0" type="Sprite" parent="."]
 material = SubResource( 4 )
 position = Vector2( 32, 448 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 29 )
 offset = Vector2( 0, -32 )
 
 [node name="placeholder_1" type="Sprite" parent="."]
 position = Vector2( -80, 504 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 29 )
 offset = Vector2( 0, -32 )
 
@@ -427,3 +433,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 color = Color( 0.101961, 0.286275, 0.411765, 1 )
+
+[node name="jake" parent="." instance=ExtResource( 30 )]
+position = Vector2( 256, 504 )
+script = ExtResource( 32 )
+
+[node name="Label" type="Label" parent="jake"]
+margin_right = 40.0
+margin_bottom = 16.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "JAKE"

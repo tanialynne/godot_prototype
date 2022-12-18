@@ -12,10 +12,22 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Interactable",
 "language": "GDScript",
-"path": "res://scenes/objects/mobileCart.gd"
+"path": "res://scenes/objects/Interactable.gd"
+}, {
+"base": "Interactable",
+"class": "NPC",
+"language": "GDScript",
+"path": "res://scenes/NPC.gd"
+}, {
+"base": "TextureRect",
+"class": "Response",
+"language": "GDScript",
+"path": "res://scripts/response.gd"
 } ]
 _global_script_class_icons={
-"Interactable": ""
+"Interactable": "",
+"NPC": "",
+"Response": ""
 }
 
 [application]

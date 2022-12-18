@@ -6,13 +6,13 @@ var goal : Area2D
 var character : String = Game.stringholder_characterName
 var speed : int = 150
 var adaptability_maximum : int = 100
-var adaptability_current : int = 100
+var adaptability_current : int = 50
 var listening_maximum : int = 100
-var listening_current : int = 100
+var listening_current : int = 50
 var clarity_maximum : int = 100
-var clarity_current : int = 100
+var clarity_current : int = 50
 var feedback_maximum : int = 100
-var feedback_current : int = 100
+var feedback_current : int = 50
 var dir : String = "southwest"
 
 func _ready():
@@ -52,8 +52,15 @@ func _process(delta):
 		$AnimatedSprite.play("idle_" + dir)
 		
 		if goal:
+			match(goal):
+				Game.mobileChart:
+					Game.ui.call_deferred("add_child", load("res://computerScreen.tscn").instance())
+				Game.jake:
+					Events.event_6()
+					Game.ui.call_deferred("add_child", load("res://jakeInteraction.tscn").instance())
+					
+			
 			goal = null
-			Game.ui.call_deferred("add_child", load("res://computerScreen.tscn").instance())
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed():

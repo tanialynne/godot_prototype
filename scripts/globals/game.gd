@@ -8,6 +8,8 @@ var tileMap : TileMap
 var avatar : String = "res://textures/avatars/avatar_0.png"
 var character : Area2D
 var mobileChart : Area2D
+var jake : Area2D
+var uma : Area2D
 
 var stringholder_characterName : String  = "Player"
 

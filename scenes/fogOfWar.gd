@@ -4,6 +4,7 @@ func _ready():
 	pass
 
 func _process(delta):
+	return
 	if Game.character.path.size() == 0:
 		$Tween.interpolate_property(
 			self, "self_modulate:a",
