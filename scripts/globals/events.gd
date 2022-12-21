@@ -67,5 +67,14 @@ func event_5():
 	infoLabel.name = "infoLabel"
 
 func event_6():
+	Game.jake.disable_interaction()
 	Game.jake.get_node("infoIcon").call_deferred("free")
 	Game.jake.get_node("infoLabel").call_deferred("free")
+	
+	var focusHightlight = load("res://scenes/focusHighlight.tscn").instance()
+	Game.jake.call_deferred("add_child", focusHightlight)
+	
+	var speechBubble = load("res://scenes/speechBubble.tscn").instance()
+	Game.jake.call_deferred("add_child", speechBubble)
+	speechBubble.variation = 4
+	speechBubble.rect_position += Vector2(128, -320)

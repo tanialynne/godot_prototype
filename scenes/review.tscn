@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/review.gd" type="Script" id=1]
+[ext_resource path="res://scenes/button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://textures/interaction/option_panel_active.png" type="Texture" id=3]
+[ext_resource path="res://textures/interaction/thumbs_up.png" type="Texture" id=4]
+[ext_resource path="res://fonts/agency-fb.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://fonts/agency-fb-bold.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+font_data = ExtResource( 5 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="buttonReturn" parent="." instance=ExtResource( 2 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -359.0
+margin_top = -197.0
+margin_right = 0.0
+margin_bottom = 0.0
+text = "Return to Floor"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 64.0
+margin_top = 768.0
+margin_right = 1536.0
+margin_bottom = 1033.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+margin_right = 1472.0
+margin_bottom = 265.0
+texture = ExtResource( 3 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="icon" type="TextureRect" parent="."]
+margin_left = 128.0
+margin_top = 832.0
+margin_right = 267.0
+margin_bottom = 971.0
+texture = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 320.0
+margin_top = 800.0
+margin_right = 1504.0
+margin_bottom = 992.0
+custom_constants/line_separation = -2
+custom_fonts/bold_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )

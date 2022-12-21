@@ -34,9 +34,8 @@ func on_jake_gui_input(event):
 		
 		jakeInput = true
 		
-		if jakeInput and umaInput:
-			$info/buttonReturnToFloor.texture = load("res://textures/assets_02_03/button_active.png")
-			$info/buttonReturnToFloor.connect("gui_input", self, "on_buttonReturnToFloor_gui_input")
+		if jakeInput and umaInput and not $info/buttonReturnToFloor.is_connected("pressed", self, "on_buttonReturnToFloor_pressed"):
+			$info/buttonReturnToFloor.connect("pressed", self, "on_buttonReturnToFloor_pressed")
 
 func on_uma_gui_input(event):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
@@ -52,13 +51,11 @@ func on_uma_gui_input(event):
 		
 		umaInput = true
 		
-		if umaInput and jakeInput:
-			$info/buttonReturnToFloor.texture = load("res://textures/assets_02_03/button_active.png")
-			$info/buttonReturnToFloor.connect("gui_input", self, "on_buttonReturnToFloor_gui_input")
+		if umaInput and jakeInput and not $info/buttonReturnToFloor.is_connected("pressed", self, "on_buttonReturnToFloor_pressed"):
+			$info/buttonReturnToFloor.connect("pressed", self, "on_buttonReturnToFloor_pressed")
 
-func on_buttonReturnToFloor_gui_input(event):
-	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
-		Events.event_5()
-		call_deferred("free")
-		get_tree().paused = false
+func on_buttonReturnToFloor_pressed():
+	Events.event_5()
+	call_deferred("free")
+	get_tree().paused = false
 

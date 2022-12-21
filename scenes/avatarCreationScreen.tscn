@@ -1,13 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/avatarCreationScreen.gd" type="Script" id=1]
 [ext_resource path="res://textures/ui/name_enter_field.png" type="Texture" id=2]
-[ext_resource path="res://textures/ui/button_active.png" type="Texture" id=4]
+[ext_resource path="res://scenes/button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/TextEdit.gd" type="Script" id=5]
 [ext_resource path="res://textures/welcomeScreen/panel_full.png" type="Texture" id=6]
 [ext_resource path="res://fonts/agency-fb.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://textures/ui/button_inactive.png" type="Texture" id=8]
-[ext_resource path="res://fonts/agency-fb-bold.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -25,10 +23,6 @@ region_rect = Rect2( 0, 0, 375, 79 )
 [sub_resource type="DynamicFont" id=4]
 size = 28
 font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 58
-font_data = ExtResource( 9 )
 
 [node name="TextureRect" type="TextureRect"]
 anchor_left = 0.5
@@ -98,27 +92,13 @@ text = "Enter your name here"
 align = 1
 valign = 1
 
-[node name="textureButton_go" type="TextureButton" parent="."]
+[node name="button_go" parent="." instance=ExtResource( 3 )]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -184.0
-margin_top = 356.0
-margin_right = 175.0
-margin_bottom = 553.0
-texture_normal = ExtResource( 4 )
-texture_disabled = ExtResource( 8 )
-
-[node name="Label" type="Label" parent="textureButton_go"]
-anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 47.0
-margin_top = 41.0
-margin_right = -46.0
-margin_bottom = -54.0
-mouse_filter = 1
-custom_fonts/font = SubResource( 5 )
+margin_left = -179.5
+margin_top = -101.0
+margin_right = 179.5
+margin_bottom = 96.0
 text = "Let's Go"
-align = 1
-valign = 1

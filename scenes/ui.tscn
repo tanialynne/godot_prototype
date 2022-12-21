@@ -6,7 +6,7 @@
 [ext_resource path="res://textures/ui/coach_meter.png" type="Texture" id=4]
 [ext_resource path="res://textures/placeholder_characterPreview.png" type="Texture" id=5]
 [ext_resource path="res://scenes/card.gd" type="Script" id=6]
-[ext_resource path="res://highlight.png" type="Texture" id=7]
+[ext_resource path="res://textures/highlight.png" type="Texture" id=7]
 [ext_resource path="res://scenes/fogOfWar.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=2]

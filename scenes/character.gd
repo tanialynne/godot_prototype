@@ -54,10 +54,10 @@ func _process(delta):
 		if goal:
 			match(goal):
 				Game.mobileChart:
-					Game.ui.call_deferred("add_child", load("res://computerScreen.tscn").instance())
+					Game.ui.call_deferred("add_child", load("res://scenes/computerScreen.tscn").instance())
 				Game.jake:
 					Events.event_6()
-					Game.ui.call_deferred("add_child", load("res://jakeInteraction.tscn").instance())
+					Game.ui.call_deferred("add_child", load("res://scenes/jakeInteraction.tscn").instance())
 					
 			
 			goal = null

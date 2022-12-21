@@ -3,6 +3,7 @@ class_name Response
 tool
 
 export(String) var text = "Text..." setget set_text
+export(int) var variation : int
 export(bool) var correctAnswer = false
 export(int) var adaptability = 0
 export(int) var listening  = 0
@@ -36,4 +37,9 @@ func _on_Response_gui_input(event):
 			child.disconnect("mouse_exited", child, "_on_Response_mouse_exited")
 			child.disconnect("gui_input", child, "_on_Response_gui_input")
 		
-		get_parent().get_parent().get_node("buttonReturnToFloor").show()
+		get_parent().get_parent().call_deferred("free")
+		var review = load("res://scenes/review.tscn").instance()
+		Game.ui.call_deferred("add_child", review)
+		review.correctAnswer = correctAnswer
+		review.variation = variation
+

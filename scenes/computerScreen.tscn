@@ -1,8 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://computerScreen.gd" type="Script" id=1]
+[ext_resource path="res://scenes/computerScreen.gd" type="Script" id=1]
 [ext_resource path="res://fonts/agency-fb-bold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://textures/assets_02_03/button_inactive.png" type="Texture" id=3]
+[ext_resource path="res://scenes/button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://textures/text_panel.png" type="Texture" id=4]
 [ext_resource path="res://textures/assets_02_03/uma.png" type="Texture" id=6]
 [ext_resource path="res://textures/assets_02_03/jake.png" type="Texture" id=7]
@@ -11,10 +11,6 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 40
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -116,32 +112,6 @@ margin_bottom = 160.0
 custom_fonts/font = SubResource( 1 )
 valign = 1
 
-[node name="buttonReturnToFloor" type="TextureRect" parent="info"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -179.5
-margin_top = -94.0
-margin_right = 179.5
-margin_bottom = 103.0
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Label" type="Label" parent="info/buttonReturnToFloor"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -14.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 0.392157 )
-custom_constants/shadow_offset_x = 4
-custom_constants/shadow_offset_y = 4
-custom_fonts/font = SubResource( 2 )
-text = "Return to Floor"
-align = 1
-valign = 1
-
 [node name="Label" type="Label" parent="info"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -153,6 +123,17 @@ margin_right = 252.0
 margin_bottom = 225.0
 custom_fonts/font = SubResource( 3 )
 autowrap = true
+
+[node name="buttonReturnToFloor" parent="info" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -179.5
+margin_top = -101.0
+margin_right = 179.5
+margin_bottom = 96.0
+text = "Return to Floor"
 
 [node name="jake" type="ColorRect" parent="."]
 margin_left = 352.0

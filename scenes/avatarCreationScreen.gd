@@ -4,7 +4,7 @@ var textureRect_selected = TextureRect.new()
 
 func _ready():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	$textureButton_go.connect("pressed", self, "on_textureButton_go_pressed")
+	$button_go.connect("pressed", self, "on_button_go_pressed")
 	
 	#Instance Avatars
 	for i in range(9):
@@ -12,7 +12,7 @@ func _ready():
 		var avatarPreview = load("res://scenes/avatarPreview.tscn").instance()
 		$GridContainer.call_deferred("add_child", avatarPreview)
 	
-func on_textureButton_go_pressed():
+func on_button_go_pressed():
 	#Game.stringholder_characterName = $TextEdit.text
 	call_deferred("free")
 	Game.UI.call_deferred("add_child", load("res://scenes/control_loading.tscn").instance())

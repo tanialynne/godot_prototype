@@ -12,8 +12,6 @@ func _process(delta):
 	$TextureProgress.value = loader.get_stage()
 	var err = loader.poll()
 	
-	#yield(get_tree().create_timer(3.0), "timeout")
-	
 	if err == ERR_FILE_EOF:
 		var scene = loader.get_resource().instance()
 		Game.main.call_deferred("add_child", scene)

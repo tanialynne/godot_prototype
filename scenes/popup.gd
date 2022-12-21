@@ -10,26 +10,25 @@ var texts : Dictionary = {
 
 func _ready():
 	get_tree().paused = true
-	$buttonNext.connect("gui_input", self, "on_buttonNext_gui_input")
+	$buttonNext.connect("pressed", self, "on_buttonNext_pressed")
 	$info.set_text(texts[variation])
 	
 	if variation in [0, 1, 2]:
-		$buttonNext/text.text = "Next"
+		$buttonNext.text = "Next"
 	elif variation in [3]:
-		$buttonNext/text.text = "Close"
+		$buttonNext.text = "Close"
 
-func on_buttonNext_gui_input(event):
-	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
-		call_deferred("free")
-		
-		match(variation):
-			0:
-				Events.event_1()
-			1 : 
-				Events.event_2()
-			2:
-				Events.event_3()
-			3:
-				Events.event_4()
-		
-		get_tree().paused = false
+func on_buttonNext_pressed():
+	call_deferred("free")
+	
+	match(variation):
+		0:
+			Events.event_1()
+		1 : 
+			Events.event_2()
+		2:
+			Events.event_3()
+		3:
+			Events.event_4()
+	
+	get_tree().paused = false
