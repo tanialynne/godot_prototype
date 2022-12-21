@@ -17,8 +17,7 @@ var reviews = {
 		+ "\n\nYou lose points for giving poor feedback.”"
 	),
 	3 : (
-		"“Five stars! You coached Jake by letting him know what he was doing wrong, why it’s wrong, and how to correct the process."\
-		+"\n\nYou gain points for great clarity and giving constructive feedback.”"
+		"“Five stars! You coached Jake by letting him know what he was doing wrong, why it’s wrong, and how to correct the process. Correcting this error now will prevent errors from surfacing later on. You gain points for great clarity and giving constructive feedback.”"
 	)
 }
 

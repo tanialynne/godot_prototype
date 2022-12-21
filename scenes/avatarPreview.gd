@@ -17,7 +17,7 @@ func _on_TextureRect_mouse_entered():
 		$Tween.stop_all()
 	
 	$Tween.interpolate_property(self, "self_modulate:a", self_modulate.a, 1.0, 0.15, Tween.TRANS_SINE, Tween.EASE_OUT)
-	$Tween.interpolate_property(self, "rect_min_size", rect_min_size, Vector2(140.0, 155.0), 0.15, Tween.TRANS_SINE, Tween.EASE_IN)
+	$Tween.interpolate_property(self, "rect_min_size", rect_min_size, Vector2(125.0, 140.0), 0.15, Tween.TRANS_SINE, Tween.EASE_IN)
 	$Tween.start()
 
 func _on_TextureRect_mouse_exited():

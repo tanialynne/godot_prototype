@@ -34,9 +34,7 @@ var texts = {
 		+ "line?”"
 		),
 	6 : (
-		"“Oh…sorry, boss. I’ll try and do better next time. Or I would if I"\
-		+ "\nknew the correct process. But don’t worry, I’ll"\
-		+ "\ntry and find it.”"
+		"“Oh…sorry, " + Game.stringholder_characterName + ". But there’s no need to speak to me that way. Actually, you know what? I’m going to take my unpaid time off for the rest of the day. Bye!"
 	),
 	7 : 
 		(
@@ -47,7 +45,7 @@ var texts = {
 		),
 	8 : 
 		(
-		"“Oh, that’s great advice, boss! I had no idea. And"\
+		"“Oh, that’s great advice, " + Game.stringholder_characterName + "! I had no idea. And"\
 		+ "\nthanks for explaining it to me so clearly. I’ll single scan"\
 		+ "\them from now on to avoid errors.”"
 		)

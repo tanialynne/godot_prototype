@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="no"?>
+<manifest identifier="AMZ_01_SCORM_0100" version="1.0"
+          xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
+			xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3"
+			xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3"
+			xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3"
+			xmlns:imsss="http://www.imsglobal.org/xsd/imsss"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd
+			http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd
+			http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd
+			http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd
+			http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd" >
+  <metadata>
+	 <schema>ADL SCORM</schema>
+	 <schemaversion>2004 3rd Edition</schemaversion>
+  </metadata>
+  <organizations default="AMZ_01_SCORM">
+    <organization identifier="AMZ_01_SCORM" structure="hierarchical">
+      <title>Game Prototype</title>
+      <item identifier="AMZv0100" isvisible="true" identifierref="amazongodot">
+        <title>Game Prototype</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+  <resource identifier="amazongodot" type="webcontent" adlcp:scormType="sco" href="index.html">
+    <file href="index.apple-touch-icon.png"></file>
+    <file href="index.audio.worklet.js"></file>
+    <file href="index.html"></file>
+    <file href="index.icon.png"></file>
+    <file href="index.js"></file>
+    <file href="index.pck"></file>
+    <file href="index.png"></file>
+    <file href="index.wasm"></file>
+    </resource>
+  </resources>
+</manifest>

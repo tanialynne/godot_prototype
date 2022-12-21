@@ -11,7 +11,7 @@ var mobileChart : Area2D
 var jake : Area2D
 var uma : Area2D
 
-var stringholder_characterName : String  = "Player"
+var stringholder_characterName : String  = "PlayerName"
 
 func _ready():
 	if (JavaScript.get_interface("getPlayerName")):
